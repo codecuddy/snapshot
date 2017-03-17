@@ -1,6 +1,7 @@
 class PicsController < ApplicationController
   before_action :find_pic, only: [:show, :edit, :update, :destroy, :upvote]
   before_action :authenticate_user!, except: [:index, :show]
+
   def index
   	@pics = Pic.all.order("created_at DESC")
   end
@@ -28,9 +29,9 @@ class PicsController < ApplicationController
   def update
   	if @pic.update(pic_params)
   	  redirect_to @pic, notice: "Photo was updated"
-  	else
-  	  render 'edit'
-  	end
+    else
+      render 'edit'
+    end
   end
 
   def destroy

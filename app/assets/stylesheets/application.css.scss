@@ -48,6 +48,12 @@ nav {
   }
 }
 
+.hello_user {
+  text-decoration: none;
+  pointer-events: none;
+  cursor: default;
+}
+
 #pics {
   margin: 0 auto;
   width: 100%;
